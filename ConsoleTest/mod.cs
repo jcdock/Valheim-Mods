@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleTest
 {
-    public class Class1
+    public class mod
     {
     }
 }

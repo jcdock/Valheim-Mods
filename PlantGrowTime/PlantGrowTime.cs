@@ -14,11 +14,12 @@ namespace PlantGrowTime
 
     namespace PlantGrowTime
     {
-        [BepInPlugin("com.github.jcdock.PlantGrowTime", "PlantGrowTime", "1.0.0")]
+        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.0")]
         [BepInProcess("valheim.exe")]
         public class MyMod : BaseUnityPlugin
         {
-            private readonly Harmony harmony = new Harmony("PlantGrowTime");
+            private readonly Harmony harmony = new Harmony("Plant Grow Time");
+            public static ConfigEntry<bool> modEnabled;
             private static ConfigEntry<float> TurnipMultiplier;
             private static ConfigEntry<float> SeedTurnipMultiplier;
             private static ConfigEntry<float> CarrotMultiplier;
@@ -31,11 +32,13 @@ namespace PlantGrowTime
             private static ConfigEntry<float> OtherMultiplier;
            // public static ConfigEntry<int> nexusID;
             public static ManualLogSource logger;
-
+            
 
             void Awake()
             {
                 logger = Logger;
+               
+                modEnabled = Config.Bind<bool>("General", "Enabled", true, "Enable this mod");
                 TurnipMultiplier = Config.Bind<float>("General", "TurnipMultiplier", 0.5f, "Set growtime multiplyer for Turnips");
                 SeedTurnipMultiplier = Config.Bind<float>("General", "SeedTurnipMultiplier", 0.5f, "Set growtime multiplyer for Seed Turnips");
                 CarrotMultiplier = Config.Bind<float>("General", "CarrotMultiplier", 0.5f, "Set growtime multiplyer for Carrots");
@@ -47,9 +50,16 @@ namespace PlantGrowTime
                 BeechMultiplier = Config.Bind<float>("General", "BeechMultiplier", 0.5f, "Set growtime multiplyer for Beech");
                 OtherMultiplier = Config.Bind<float>("General", "OtherMultiplier", 0.5f, "Set growtime multiplyer for all else");
                // nexusID = Config.Bind<int>("General", "NexusID", 853, "Nexus mod ID for updates");
-                logger.LogInfo("Initialized Plant Time Mod");
-                harmony.PatchAll();
-
+                
+                if (!modEnabled.Value)
+                {
+                    return;
+                }
+                else
+                {
+                    harmony.PatchAll();
+                    logger.LogInfo("Initialized Plant Time Mod");
+                }
             }
 
             void OnDestroy()
