@@ -37,7 +37,13 @@ namespace RoofPieceMod.Prefabs
                 }
             });
 
-            // Additional piece config if you need here...
+            //Texture2D icon = LoadedAssetBundle.LoadAsset<Texture2D>("fishsausages-sprite.png");
+            //if (icon != null)
+            //{
+            //    Sprite sprite = Sprite.Create(icon, new Rect(0f, 0f, icon.width, icon.height), Vector2.zero);
+            //    //m_icons[0] is the actual sprite itself.
+            //    item.m_itemData.m_shared.m_icons[0] = sprite;
+            //}
         }
     }
 }
