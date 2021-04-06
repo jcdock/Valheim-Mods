@@ -31,13 +31,21 @@ namespace RoofPieceMod
         {
             PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2m());
             PrefabManager.Instance.RegisterPrefab(new goblinwoodwall1m());
-
+            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2mribs());
+            PrefabManager.Instance.RegisterPrefab(new goblinpole());
+            PrefabManager.Instance.RegisterPrefab(new goblinpolesmall());
+            PrefabManager.Instance.RegisterPrefab(new goblinroof45d());
+            PrefabManager.Instance.RegisterPrefab(new goblinroof45dCorner());
         }
         private void registerPieces(object sender, EventArgs e)
         {
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-2m");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-1m");
-
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-2m-ribs");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-pole");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-pole-small");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45d");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45dCorner");
         }
         
         private void registerObjects(object sender, EventArgs e)

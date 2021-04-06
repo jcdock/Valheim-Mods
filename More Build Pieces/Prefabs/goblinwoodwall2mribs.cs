@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace RoofPieceMod.Prefabs
 {
-    public class goblinwoodwall1m : PrefabConfig
+    public class goblinwoodwall2mribs : PrefabConfig
     {
         // Create a prefab called "TestCube" with no base
-        public goblinwoodwall1m() : base("goblin-wood-wall-1m", "goblin_woodwall_1m")
+        public goblinwoodwall2mribs() : base("goblin-wood-wall-2m-ribs", "goblin_woodwall_2m_ribs")
         {
 
         }
@@ -18,7 +18,7 @@ namespace RoofPieceMod.Prefabs
             Piece piece = AddPiece(new PieceConfig()
             {
                 // The name that shows up in game
-                Name = "Goblin Wooden Wall 1M",
+                Name = "Goblin Wooden Wall 2M Ribs",
 
                 // The description that shows up in game
                 Description = null,
@@ -32,12 +32,12 @@ namespace RoofPieceMod.Prefabs
                         Item = "Wood",
                         
                         // Amount we need
-                        Amount = 1
+                        Amount = 2
                     }
                 }
             });
-           
-           
+
+            // Additional piece config if you need here...
         }
     }
 }
