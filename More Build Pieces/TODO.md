@@ -11,6 +11,10 @@
 - [ ] goblin_fence
 - [ ] goblin_stairs
 - [ ] goblin_bed
+- [ ] goblin_totempole
+- [ ] goblin_pole_small
+- [ ] goblin_stepladder
+
 
 ## Other things 
 - [ ] Change icons 
