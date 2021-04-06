@@ -11,3 +11,7 @@
 - [ ] goblin_fence
 - [ ] goblin_stairs
 - [ ] goblin_bed
+
+## Other things 
+- [ ] Change icons 
+- [ ] set pieces to their proper tables 
