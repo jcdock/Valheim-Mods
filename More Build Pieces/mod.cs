@@ -29,18 +29,21 @@ namespace RoofPieceMod
 
         private void registerPrefabs(object sender, EventArgs e)
         {
-            PrefabManager.Instance.RegisterPrefab(new TestWall());
-            
+            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2m());
+            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall1m());
+
         }
         private void registerPieces(object sender, EventArgs e)
         {
-            PieceManager.Instance.RegisterPiece("Hammer", "TestWall");
-            
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-2m");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-1m");
+
         }
         
         private void registerObjects(object sender, EventArgs e)
         {
-            PrefabManager.Instance.RegisterPrefab(new TestWall());
+            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2m());
+            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall1m());
         }
 
     }

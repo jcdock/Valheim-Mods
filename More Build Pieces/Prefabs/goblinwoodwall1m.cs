@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace RoofPieceMod.Prefabs
 {
-    public class TestWall : PrefabConfig
+    public class goblinwoodwall1m : PrefabConfig
     {
         // Create a prefab called "TestCube" with no base
-        public TestWall() : base("TestWall", "goblin_woodwall_2m")
+        public goblinwoodwall1m() : base("goblin-wood-wall-1m", "goblin_woodwall_1m")
         {
 
         }
@@ -18,10 +18,10 @@ namespace RoofPieceMod.Prefabs
             Piece piece = AddPiece(new PieceConfig()
             {
                 // The name that shows up in game
-                Name = "Test Wall",
+                Name = "Goblin Wooden Wall 1M",
 
                 // The description that shows up in game
-                Description = "A nice test Wall",
+                Description = null,
 
                 // What items we'll need to build it
                 Requirements = new PieceRequirementConfig[]

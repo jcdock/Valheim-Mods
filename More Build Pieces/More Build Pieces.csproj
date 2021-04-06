@@ -63,7 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Prefabs\TestWall.cs" />
+    <Compile Include="Prefabs\goblinwoodwall1m.cs" />
+    <Compile Include="Prefabs\goblinwoodwall2m.cs" />
     <Compile Include="mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
