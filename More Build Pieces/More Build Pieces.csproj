@@ -70,7 +70,7 @@
     <Compile Include="Prefabs\goblinpole.cs" />
     <Compile Include="Prefabs\goblinwoodwall2mribs.cs" />
     <Compile Include="Prefabs\goblinwoodwall2m.cs" />
-    <Compile Include="mod.cs" />
+    <Compile Include="MoreBuildPieces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

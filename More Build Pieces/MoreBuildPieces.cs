@@ -7,10 +7,10 @@ using JotunnLib.ConsoleCommands;
 using JotunnLib.Entities;
 using JotunnLib.Managers;
 using JotunnLib.Utils;
-using RoofPieceMod.Prefabs;
+using MoreBuildPieces.Prefabs;
 
 
-namespace RoofPieceMod
+namespace MoreBuildPieces
 {
     
     [BepInPlugin("JcDock.MoreBuildPieces", "More Build Pieces", "0.0.1")]

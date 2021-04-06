@@ -2,7 +2,7 @@
 using JotunnLib.Entities;
 using UnityEngine;
 
-namespace RoofPieceMod.Prefabs
+namespace MoreBuildPieces.Prefabs
 {
     public class goblinroof45dCorner : PrefabConfig
     {
@@ -40,4 +40,4 @@ namespace RoofPieceMod.Prefabs
             }
         }
     }
-}
+

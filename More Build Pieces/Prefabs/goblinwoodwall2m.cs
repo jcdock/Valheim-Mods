@@ -2,7 +2,7 @@
 using JotunnLib.Entities;
 using UnityEngine;
 
-namespace RoofPieceMod.Prefabs
+namespace MoreBuildPieces.Prefabs
 {
     public class goblinwoodwall2m : PrefabConfig
     {
