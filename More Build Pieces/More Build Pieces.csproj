@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <EmbeddedResource Include="testbundle" />
     <None Include="TODO.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
