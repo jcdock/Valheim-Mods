@@ -63,11 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Prefabs\goblinstepladder.cs" />
+    <Compile Include="Prefabs\goblinbed.cs" />
+    <Compile Include="Prefabs\goblinstairs.cs" />
+    <Compile Include="Prefabs\goblinfence.cs" />
     <Compile Include="Prefabs\goblinpolesmall.cs" />
     <Compile Include="Prefabs\goblinroof45dCorner.cs" />
     <Compile Include="Prefabs\goblinroof45d.cs" />
     <Compile Include="Prefabs\goblinwoodwall1m.cs" />
     <Compile Include="Prefabs\goblinpole.cs" />
+    <Compile Include="Prefabs\goblintotempole.cs" />
     <Compile Include="Prefabs\goblinwoodwall2mribs.cs" />
     <Compile Include="Prefabs\goblinwoodwall2m.cs" />
     <Compile Include="MoreBuildPieces.cs" />

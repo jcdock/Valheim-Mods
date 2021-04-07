@@ -7,13 +7,12 @@
 - [x] goblin_woodwall_1m
 - [x] goblin_pole
 - [x] goblin_woodwall_2m_ribs
-- [ ] wood_wall_log
-- [ ] goblin_fence
-- [ ] goblin_stairs
-- [ ] goblin_bed
-- [ ] goblin_totempole
+- [x] goblin_fence
+- [x] goblin_stairs
+- [x] goblin_bed
+- [x] goblin_totempole
 - [x] goblin_pole_small
-- [ ] goblin_stepladder
+- [x] goblin_stepladder
 
 
 ## Other things 

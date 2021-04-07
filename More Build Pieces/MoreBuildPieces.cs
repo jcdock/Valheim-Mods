@@ -36,6 +36,11 @@ namespace MoreBuildPieces
             PrefabManager.Instance.RegisterPrefab(new goblinpolesmall());
             PrefabManager.Instance.RegisterPrefab(new goblinroof45d());
             PrefabManager.Instance.RegisterPrefab(new goblinroof45dCorner());
+            PrefabManager.Instance.RegisterPrefab(new goblintotempole());
+            PrefabManager.Instance.RegisterPrefab(new goblinfence());
+            PrefabManager.Instance.RegisterPrefab(new goblinstairs());
+            PrefabManager.Instance.RegisterPrefab(new goblinbed());
+            PrefabManager.Instance.RegisterPrefab(new goblinstepladder());
         }
         private void registerPieces(object sender, EventArgs e)
         {
@@ -46,13 +51,19 @@ namespace MoreBuildPieces
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-pole-small");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45d");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45dCorner");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-totem-pole");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-fence");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-stairs");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-bed");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-stepladder");
+
         }
         
-        private void registerObjects(object sender, EventArgs e)
-        {
-            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2m());
-            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall1m());
-        }
+        //private void registerObjects(object sender, EventArgs e)
+        //{
+        //    PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2m());
+        //    PrefabManager.Instance.RegisterPrefab(new goblinwoodwall1m());
+        //}
 
     }
 }

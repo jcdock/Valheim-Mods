@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace MoreBuildPieces.Prefabs
 {
-    public class goblinwoodwall1m : PrefabConfig
+    public class goblintotempole : PrefabConfig
     {
         // Create a prefab called "TestCube" with no base
-        public goblinwoodwall1m() : base("goblin-wood-wall-1m", "goblin_woodwall_1m")
+        public goblintotempole() : base("goblin-totem-pole", "goblin_totem_pole")
         {
 
         }
@@ -18,7 +18,7 @@ namespace MoreBuildPieces.Prefabs
             Piece piece = AddPiece(new PieceConfig()
             {
                 // The name that shows up in game
-                Name = "Goblin Wooden Wall 1M",
+                Name = "Goblin Totem Pole",
 
                 // The description that shows up in game
                 Description = null,
@@ -32,26 +32,21 @@ namespace MoreBuildPieces.Prefabs
                         Item = "Wood",
                         
                         // Amount we need
-                        Amount = 1
+                        Amount = 2
+                    },
+
+                    new PieceRequirementConfig()
+                    {
+                        // Name of item prefab we need
+                        Item = "Stone",
+                        
+                        // Amount we need
+                        Amount = 2
                     }
                 }
             });
-            //var LoadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Paths.PluginPath, "FishFood", "fishfood"));
 
-            //if (LoadedAssetBundle == null)
-            //{
-            //    Debug.Log("Failed to load AssetBundle!");
-            //    return;
-            //}
-
-            //Texture2D icon = LoadedAssetBundle.LoadAsset<Texture2D>("fishsausages-sprite.png");
-            //if (icon != null)
-            //{
-            //    Sprite sprite = Sprite.Create(icon, new Rect(0f, 0f, icon.width, icon.height), Vector2.zero);
-            //    //m_icons[0] is the actual sprite itself.
-            //    item.m_itemData.m_shared.m_icons[0] = sprite;
-            //}
-
+            // Additional piece config if you need here...
         }
     }
 }
