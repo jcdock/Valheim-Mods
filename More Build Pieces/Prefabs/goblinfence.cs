@@ -33,6 +33,14 @@ namespace MoreBuildPieces.Prefabs
                         
                         // Amount we need
                         Amount = 2
+                    },
+                new PieceRequirementConfig()
+                    {
+                        // Name of item prefab we need
+                        Item = "Bones",
+                        
+                        // Amount we need
+                        Amount = 2
                     }
                 }
             });
