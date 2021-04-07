@@ -63,8 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Prefabs\goblinstepladder.cs" />
     <Compile Include="Prefabs\goblinbed.cs" />
+    <Compile Include="Prefabs\goblinstepladder.cs" />
     <Compile Include="Prefabs\goblinstairs.cs" />
     <Compile Include="Prefabs\goblinfence.cs" />
     <Compile Include="Prefabs\goblinpolesmall.cs" />

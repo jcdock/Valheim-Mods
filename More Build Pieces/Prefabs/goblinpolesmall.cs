@@ -21,7 +21,7 @@ namespace MoreBuildPieces.Prefabs
                 Name = "Goblin Pole Small",
 
                 // The description that shows up in game
-                Description = null,
+                Description = "",
 
                 // What items we'll need to build it
                 Requirements = new PieceRequirementConfig[]

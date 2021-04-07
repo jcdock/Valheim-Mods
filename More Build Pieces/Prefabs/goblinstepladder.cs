@@ -18,10 +18,10 @@ namespace MoreBuildPieces.Prefabs
             Piece piece = AddPiece(new PieceConfig()
             {
                 // The name that shows up in game
-                Name = "Goblin Stepladder",
+                Name = "Goblin stepladder",
 
                 // The description that shows up in game
-                Description = "Not your real ladder!",
+                Description = "",
 
                 // What items we'll need to build it
                 Requirements = new PieceRequirementConfig[]
@@ -36,8 +36,8 @@ namespace MoreBuildPieces.Prefabs
                     }
                 }
             });
-
-            // Additional piece config if you need here...
+           
+            }
         }
     }
-}
+

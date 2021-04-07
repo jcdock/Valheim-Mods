@@ -50,8 +50,8 @@ namespace MoreBuildPieces
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-pole");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-pole-small");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45d");
-            PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45dCorner");
-            PieceManager.Instance.RegisterPiece("Hammer", "goblin-totem-pole");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45d-corner");
+            PieceManager.Instance.RegisterPiece("Hammer", "goblin-totempole");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-fence");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-stairs");
             PieceManager.Instance.RegisterPiece("Hammer", "goblin-bed");

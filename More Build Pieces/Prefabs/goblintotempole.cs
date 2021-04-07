@@ -7,7 +7,7 @@ namespace MoreBuildPieces.Prefabs
     public class goblintotempole : PrefabConfig
     {
         // Create a prefab called "TestCube" with no base
-        public goblintotempole() : base("goblin-totem-pole", "goblin_totem_pole")
+        public goblintotempole() : base("goblin-totempole", "goblin_totempole")
         {
 
         }
@@ -21,7 +21,7 @@ namespace MoreBuildPieces.Prefabs
                 Name = "Goblin Totem Pole",
 
                 // The description that shows up in game
-                Description = null,
+                Description = "",
 
                 // What items we'll need to build it
                 Requirements = new PieceRequirementConfig[]
