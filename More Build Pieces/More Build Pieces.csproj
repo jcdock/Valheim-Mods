@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetBundleHelper.cs" />
+    <Compile Include="Prefabs\teststairs.cs" />
     <Compile Include="Prefabs\goblinbed.cs" />
     <Compile Include="Prefabs\goblinstepladder.cs" />
     <Compile Include="Prefabs\goblinstairs.cs" />
@@ -80,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <EmbeddedResource Include="testbundle" />
     <None Include="TODO.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
