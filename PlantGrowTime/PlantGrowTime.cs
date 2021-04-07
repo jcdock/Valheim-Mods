@@ -14,7 +14,7 @@ namespace PlantGrowTime
 
     namespace PlantGrowTime
     {
-        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.0")]
+        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.1")]
         [BepInProcess("valheim.exe")]
         public class MyMod : BaseUnityPlugin
         {
@@ -30,7 +30,7 @@ namespace PlantGrowTime
             private static ConfigEntry<float> PineMultiplier;
             private static ConfigEntry<float> BeechMultiplier;
             private static ConfigEntry<float> OtherMultiplier;
-           // public static ConfigEntry<int> nexusID;
+            public static ConfigEntry<int> nexusID;
             public static ManualLogSource logger;
             
 
@@ -39,17 +39,17 @@ namespace PlantGrowTime
                 logger = Logger;
                
                 modEnabled = Config.Bind<bool>("General", "Enabled", true, "Enable this mod");
-                TurnipMultiplier = Config.Bind<float>("General", "TurnipMultiplier", 0.5f, "Set growtime multiplyer for Turnips");
-                SeedTurnipMultiplier = Config.Bind<float>("General", "SeedTurnipMultiplier", 0.5f, "Set growtime multiplyer for Seed Turnips");
-                CarrotMultiplier = Config.Bind<float>("General", "CarrotMultiplier", 0.5f, "Set growtime multiplyer for Carrots");
-                SeedCarrotMultiplier = Config.Bind<float>("General", "SeedCarrotMultiplier", 0.5f, "Set growtime multiplyer for Seed Carrots");
-                FlaxMultiplier = Config.Bind<float>("General", "FlaxMultiplier", 0.5f, "Set growtime multiplyer for Flax");
-                BarleyMultiplier = Config.Bind<float>("General", "BarleyMultiplier", 0.5f, "Set growtime multiplyer for Barley");
-                FirMultiplier = Config.Bind<float>("General", "FirMultiplier", 0.5f, "Set growtime multiplyer for Fir");
-                PineMultiplier = Config.Bind<float>("General", "PineMultiplier", 0.5f, "Set growtime multiplyer for Pine");
-                BeechMultiplier = Config.Bind<float>("General", "BeechMultiplier", 0.5f, "Set growtime multiplyer for Beech");
-                OtherMultiplier = Config.Bind<float>("General", "OtherMultiplier", 0.5f, "Set growtime multiplyer for all else");
-               // nexusID = Config.Bind<int>("General", "NexusID", 853, "Nexus mod ID for updates");
+                TurnipMultiplier = Config.Bind<float>("General", "TurnipMultiplier", 1f, "Set growtime multiplyer for Turnips");
+                SeedTurnipMultiplier = Config.Bind<float>("General", "SeedTurnipMultiplier", 1f, "Set growtime multiplyer for Seed Turnips");
+                CarrotMultiplier = Config.Bind<float>("General", "CarrotMultiplier", 1f, "Set growtime multiplyer for Carrots");
+                SeedCarrotMultiplier = Config.Bind<float>("General", "SeedCarrotMultiplier", 1f, "Set growtime multiplyer for Seed Carrots");
+                FlaxMultiplier = Config.Bind<float>("General", "FlaxMultiplier", 1f, "Set growtime multiplyer for Flax");
+                BarleyMultiplier = Config.Bind<float>("General", "BarleyMultiplier", 1f, "Set growtime multiplyer for Barley");
+                FirMultiplier = Config.Bind<float>("General", "FirMultiplier", 1f, "Set growtime multiplyer for Fir");
+                PineMultiplier = Config.Bind<float>("General", "PineMultiplier", 1f, "Set growtime multiplyer for Pine");
+                BeechMultiplier = Config.Bind<float>("General", "BeechMultiplier", 1f, "Set growtime multiplyer for Beech");
+                OtherMultiplier = Config.Bind<float>("General", "OtherMultiplier", 1f, "Set growtime multiplyer for all else");
+               nexusID = Config.Bind<int>("General", "NexusID", 943, "Nexus mod ID for updates");
                 
                 if (!modEnabled.Value)
                 {

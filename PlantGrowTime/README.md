@@ -1,2 +1,3 @@
 # PlantGrowTime
-A Vaheim mod to change the grow time of plants.
+
+Modify the grow time of default game plants
