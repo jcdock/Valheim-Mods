@@ -8,12 +8,11 @@
 - [x] goblin_pole
 - [x] goblin_woodwall_2m_ribs
 - [x] goblin_fence
-- [x] goblin_stairs
 - [x] goblin_bed
 - [x] goblin_totempole
 - [x] goblin_pole_small
-- [x] goblin_stepladder
-
+- [ ] goblin_stepladder
+- [ ] goblin_stairs
 
 ## Other things 
 - [ ] Change icons 
