@@ -14,7 +14,7 @@ namespace PlantGrowTime
 
     namespace PlantGrowTime
     {
-        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.1")]
+        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.2")]
         [BepInProcess("valheim.exe")]
         public class MyMod : BaseUnityPlugin
         {
@@ -75,103 +75,84 @@ namespace PlantGrowTime
                     string name = __instance.m_name;
                     if (name == "$piece_sapling_turnip")
                     {
-                        logger.LogInfo("TURNIPS!!!!!");
-                        logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
                         __instance.m_growTime *= TurnipMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {TurnipMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
+
                     }
                     else if (name == "$piece_sapling_seedturnip")
                     {
-                        logger.LogInfo("SEED TURNIPS!!!!!");
                         logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
+                        
                         __instance.m_growTime *= SeedTurnipMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {SeedTurnipMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$piece_sapling_carrot")
                     {
-                        logger.LogInfo("Carrots!!!!!");
+
                         logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
                         __instance.m_growTime *= CarrotMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {CarrotMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$piece_sapling_seedcarrot")
                     {
-                        logger.LogInfo("SEED carrots!!!!!");
+                      
                         logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
+                       
                         __instance.m_growTime *= SeedCarrotMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {SeedCarrotMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$piece_sapling_barley")
                     {
-                        logger.LogInfo("Barley!!!!!");
+                       
                         logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
+                 
                         __instance.m_growTime *= BarleyMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {BarleyMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$piece_sapling_flax")
                     {
-                        logger.LogInfo("Flax!!!!!");
+                       
                         logger.LogInfo($"Name:  {__instance.m_name}");
                         logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
                         __instance.m_growTime *= FlaxMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {FlaxMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$prop_fir_sapling")
                     {
-                        logger.LogInfo("Fir!!!!!");
+                       
                         logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
                         __instance.m_growTime *= FirMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {FirMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$prop_pine_sapling")
                     {
-                        logger.LogInfo("Pine!!!!!");
+                       
                         logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
+             
                         __instance.m_growTime *= PineMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {PineMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$prop_beech_sapling")
                     {
-                        logger.LogInfo("Beech!!!!!");
                         logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
                         __instance.m_growTime *= BeechMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {BeechMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else
-                    {
-                        logger.LogInfo("OTHER!!!!!");
-                        logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
+                    {                
                         __instance.m_growTime *= OtherMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
-                        logger.LogInfo($"Using Multiplier: {TurnipMultiplier.Value}");
-                        logger.LogInfo($"growtime 2: {__instance.m_growTime} \n Max growtime 2: {__instance.m_growTimeMax} ");
+                        logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
+
                     }
                 }
             }
