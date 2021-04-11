@@ -82,7 +82,7 @@ namespace PlantGrowTime
                     }
                     else if (name == "$piece_sapling_seedturnip")
                     {
-                        logger.LogInfo($"Name:  {__instance.m_name}");
+                       
                         
                         __instance.m_growTime *= SeedTurnipMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
@@ -91,15 +91,13 @@ namespace PlantGrowTime
                     else if (name == "$piece_sapling_carrot")
                     {
 
-                        logger.LogInfo($"Name:  {__instance.m_name}");
+                     
                         __instance.m_growTime *= CarrotMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$piece_sapling_seedcarrot")
                     {
-                      
-                        logger.LogInfo($"Name:  {__instance.m_name}");
                        
                         __instance.m_growTime *= SeedCarrotMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
@@ -117,8 +115,7 @@ namespace PlantGrowTime
                     else if (name == "$piece_sapling_flax")
                     {
                        
-                        logger.LogInfo($"Name:  {__instance.m_name}");
-                        logger.LogInfo($"growtime 1: {__instance.m_growTime} \n Max growtime 1: {__instance.m_growTimeMax} ");
+         
                         __instance.m_growTime *= FlaxMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
@@ -126,7 +123,7 @@ namespace PlantGrowTime
                     else if (name == "$prop_fir_sapling")
                     {
                        
-                        logger.LogInfo($"Name:  {__instance.m_name}");
+                    
                         __instance.m_growTime *= FirMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
@@ -134,7 +131,7 @@ namespace PlantGrowTime
                     else if (name == "$prop_pine_sapling")
                     {
                        
-                        logger.LogInfo($"Name:  {__instance.m_name}");
+                        
              
                         __instance.m_growTime *= PineMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
