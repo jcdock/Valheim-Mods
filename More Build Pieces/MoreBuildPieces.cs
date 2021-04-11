@@ -46,7 +46,7 @@ namespace MoreBuildPieces
             PrefabManager.Instance.RegisterPrefab(new goblinstepladder());
             */
            
-            var bundle = AssetBundleHelper.GetAssetBundleFromResources("testbundle");
+            var bundle = AssetBundleHelper.GetAssetBundleFromResources("mbp_goblin");
           //  var teststairs = bundle.LoadAsset<GameObject>("Assets/CustomAssets/Prefabs/teststairs.prefab");
 
 
@@ -54,7 +54,7 @@ namespace MoreBuildPieces
             // PrefabManager.Instance.RegisterPrefab(teststairs, "TestStairs");
             AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/CustomAssets/Prefabs/teststairs.prefab"), "Teststairs" });
 
-            PrefabManager.Instance.RegisterPrefab(new stairstest());
+            
 
         }
         private void registerPieces(object sender, EventArgs e)

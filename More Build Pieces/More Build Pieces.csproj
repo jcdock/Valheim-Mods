@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetBundleHelper.cs" />
-    <Compile Include="Prefabs\teststairs.cs" />
     <Compile Include="Prefabs\goblinbed.cs" />
     <Compile Include="Prefabs\goblinstepladder.cs" />
     <Compile Include="Prefabs\goblinstairs.cs" />
@@ -81,8 +80,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="mbp_goblin" />
     <None Include="README.md" />
-    <EmbeddedResource Include="testbundle" />
     <None Include="TODO.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
