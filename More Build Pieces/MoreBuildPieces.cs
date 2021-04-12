@@ -31,49 +31,40 @@ namespace MoreBuildPieces
 
         private void registerPrefabs(object sender, EventArgs e)
         {
-            PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2m());
-            //PrefabManager.Instance.RegisterPrefab(new goblinwoodwall1m());
-            //PrefabManager.Instance.RegisterPrefab(new goblinwoodwall2mribs());
-            //PrefabManager.Instance.RegisterPrefab(new goblinpole());
-            //PrefabManager.Instance.RegisterPrefab(new goblinpolesmall());
-            //PrefabManager.Instance.RegisterPrefab(new goblinroof45d());
-            //PrefabManager.Instance.RegisterPrefab(new goblinroof45dCorner());
-            //PrefabManager.Instance.RegisterPrefab(new goblintotempole());
-            //PrefabManager.Instance.RegisterPrefab(new goblinfence());
-            //  PrefabManager.Instance.RegisterPrefab(new goblinbed());
-            /* Disabled for now, cant figure out why it wont work
-            PrefabManager.Instance.RegisterPrefab(new goblinstairs());
-            PrefabManager.Instance.RegisterPrefab(new goblinstepladder());
-            */
            
-            var bundle = AssetBundleHelper.GetAssetBundleFromResources("mbp_goblin");
-          //  var teststairs = bundle.LoadAsset<GameObject>("Assets/CustomAssets/Prefabs/teststairs.prefab");
+         var bundle = AssetBundleHelper.GetAssetBundleFromResources("mbp_goblin");
+           
 
 
             // when this is fixed, the call should be:
-            // PrefabManager.Instance.RegisterPrefab(teststairs, "TestStairs");
-            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/CustomAssets/Prefabs/teststairs.prefab"), "Teststairs" });
+            // PrefabManager.Instance.RegisterPrefab(name, "Name");
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_fence.prefab"), "mbp_goblin_fence" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_pole.prefab"), "mbp_goblin_pole" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_roof_45d.prefab"), "mbp_goblin_roof_45d" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_roof_45d_corner.prefab"), "mbp_goblin_roof_45d_corner" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_roof_45d_cap.prefab"), "mbp_goblin_roof_45d_cap" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_stairs.prefab"), "mbp_goblin_stairs" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_totempole.prefab"), "mbp_goblin_totempole" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_woodwall_1m.prefab"), "mbp_goblin_woodwall_1m" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_woodwall_2m.prefab"), "mbp_goblin_woodwall_2m" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mbp_goblin_woodwall_2m_ribs.prefab"), "mbp_goblin_woodwall_2m_ribs" });
+            AccessTools.Method(typeof(PrefabManager), "RegisterPrefab", new Type[] { typeof(GameObject), typeof(string) }).Invoke(PrefabManager.Instance, new object[] { bundle.LoadAsset<GameObject>("Assets/mbp/mpb_goblin_pole_small.prefab"), "mpb_goblin_pole_small" });
 
-            
 
         }
         private void registerPieces(object sender, EventArgs e)
         {
-            PieceManager.Instance.RegisterPiece("Hammer", "Teststairs");
-            PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-2m");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-1m");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-wood-wall-2m-ribs");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-pole");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-pole-small");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45d");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-roof-45d-corner");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-totempole");
-            //PieceManager.Instance.RegisterPiece("Hammer", "goblin-fence");
-          //  PieceManager.Instance.RegisterPiece("Hammer", "goblin-bed");
-            /* Disabled for now, cant figure out why it wont work
-            PieceManager.Instance.RegisterPiece("Hammer", "goblin-stepladder");
-            PieceManager.Instance.RegisterPiece("Hammer", "goblin-stairs");
-           */
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_fence");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_pole");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_roof_45d");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_roof_45d_corner");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_stairs");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_woodwall_1m");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_woodwall_2m");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_woodwall_2m_ribs");
+            PieceManager.Instance.RegisterPiece("Hammer", "mpb_goblin_pole_small");
+            PieceManager.Instance.RegisterPiece("Hammer", "mbp_goblin_totempole");
+            
         }
 
 
