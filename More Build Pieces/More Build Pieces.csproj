@@ -82,7 +82,6 @@
   <ItemGroup>
     <EmbeddedResource Include="mbp_goblin" />
     <None Include="README.md" />
-    <None Include="TODO.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
