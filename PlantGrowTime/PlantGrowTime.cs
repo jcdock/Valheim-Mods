@@ -14,7 +14,7 @@ namespace PlantGrowTime
 
     namespace PlantGrowTime
     {
-        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.2a")]
+        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.2")]
         [BepInProcess("valheim.exe")]
         public class MyMod : BaseUnityPlugin
         {
@@ -50,16 +50,11 @@ namespace PlantGrowTime
                 BeechMultiplier = Config.Bind<float>("General", "BeechMultiplier", 1f, "Set growtime multiplyer for Beech");
                 OtherMultiplier = Config.Bind<float>("General", "OtherMultiplier", 1f, "Set growtime multiplyer for all else");
                nexusID = Config.Bind<int>("General", "NexusID", 943, "Nexus mod ID for updates");
-                
-                if (!modEnabled.Value)
-                {
-                    return;
-                }
-                else
-                {
-                    harmony.PatchAll();
-                    logger.LogInfo("Initialized Plant Time Mod");
-                }
+             
+               
+                harmony.PatchAll();
+                logger.LogInfo("Initialized Plant Time Mod");
+               
             }
 
             void OnDestroy()
@@ -82,16 +77,12 @@ namespace PlantGrowTime
                     }
                     else if (name == "$piece_sapling_seedturnip")
                     {
-                       
-                        
                         __instance.m_growTime *= SeedTurnipMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$piece_sapling_carrot")
                     {
-
-                     
                         __instance.m_growTime *= CarrotMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
@@ -105,25 +96,18 @@ namespace PlantGrowTime
                     }
                     else if (name == "$piece_sapling_barley")
                     {
-                       
-                        logger.LogInfo($"Name:  {__instance.m_name}");
-                 
                         __instance.m_growTime *= BarleyMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$piece_sapling_flax")
                     {
-                       
-         
                         __instance.m_growTime *= FlaxMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$prop_fir_sapling")
                     {
-                       
-                    
                         __instance.m_growTime *= FirMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
@@ -131,15 +115,12 @@ namespace PlantGrowTime
                     else if (name == "$prop_pine_sapling")
                     {
                        
-                        
-             
                         __instance.m_growTime *= PineMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
                     }
                     else if (name == "$prop_beech_sapling")
                     {
-                        logger.LogInfo($"Name:  {__instance.m_name}");
                         __instance.m_growTime *= BeechMultiplier.Value;
                         __instance.m_growTimeMax = __instance.m_growTime;
                         logger.LogInfo($"Name:  {__instance.m_name} Grow Time: {__instance.m_growTime}");
