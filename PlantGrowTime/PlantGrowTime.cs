@@ -16,7 +16,7 @@ namespace PlantGrowTime
     {
         [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.2")]
         [BepInProcess("valheim.exe")]
-        public class MyMod : BaseUnityPlugin
+        public class PlantGrowTime : BaseUnityPlugin
         {
             private readonly Harmony harmony = new Harmony("Plant Grow Time");
             public static ConfigEntry<bool> modEnabled;
