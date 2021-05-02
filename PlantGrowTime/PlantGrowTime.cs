@@ -14,7 +14,7 @@ namespace PlantGrowTime
 
     namespace PlantGrowTime
     {
-        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.0.2")]
+        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.2.1")]
         [BepInProcess("valheim.exe")]
         public class PlantGrowTime : BaseUnityPlugin
         {
