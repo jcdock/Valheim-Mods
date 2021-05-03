@@ -23,6 +23,8 @@ namespace PlantGrowTime
             public static ConfigEntry<int> nexusID;
             public static ManualLogSource logger;
             public static ConfigEntry<bool> modEnabled;
+            public static ConfigEntry<bool> dropRateEnabled;
+            public static ConfigEntry<bool> GrowRateEnabled;
             private static ConfigEntry<float> TurnipGrowtime;
             private static ConfigEntry<float> SeedTurnipGrowtime;
             private static ConfigEntry<float> CarrotGrowtime;
@@ -46,8 +48,10 @@ namespace PlantGrowTime
             {
                 logger = Logger;
                
-                modEnabled = Config.Bind<bool>("General", "Enabled", true, "Enable this mod (Requires game restart to re-enable)");
-                nexusID = Config.Bind<int>("General", "NexusID", 943, "Nexus mod ID for updates (DO NOT MOIDFY THIS VALUE");
+                modEnabled = Config.Bind<bool>("General", "1Mod Enabled", true, "Enable this mod (Requires game restart to re-enable)");
+                GrowRateEnabled = Config.Bind<bool>("General", "1Grow Rate Change Enabled", true, "Enable Grow Rate Change");
+                dropRateEnabled = Config.Bind<bool>("General", "1Drop Rate Change Enabled", true, "Enable Drop Rate Change");
+                nexusID = Config.Bind<int>("General", "NexusID", 943, "Nexus mod ID for updates (DO NOT MOIDFY THIS VALUE)");
                 TurnipGrowtime = Config.Bind<float>("General", "Turnip GrowTime", 600f, "Set growtime in seconds for Turnips");
                 SeedTurnipGrowtime = Config.Bind<float>("General", "Seed TurnipGrowtime", 600f, "Set growtime in seconds for Seed Turnips");
                 CarrotGrowtime = Config.Bind<float>("General", "Carrot GrowTime", 600f, "Set growtime in seconds for Carrots");
@@ -96,6 +100,8 @@ namespace PlantGrowTime
             {
                 static void Prefix(ref Plant __instance)
                 {
+                    if (!GrowRateEnabled.Value)
+                        return;
                     string name = __instance.m_name;
                     if (name == "$piece_sapling_turnip")
                     {
@@ -169,7 +175,8 @@ namespace PlantGrowTime
             {
                 static void Postfix(ref Pickable __instance)
                 {
-                    
+                    if (!dropRateEnabled.Value)
+                        return;
                     string name = __instance.GetHoverName();
                     if (name == "$item_turnipseeds")
                     {
