@@ -14,7 +14,7 @@ namespace PlantGrowTime
 
     namespace PlantGrowTime
     {
-        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.2.1")]
+        [BepInPlugin("com.github.jcdock.PlantGrowTime", "Plant Grow Time", "1.2.3")]
         [BepInProcess("valheim.exe")]
         public class PlantGrowTime : BaseUnityPlugin
         {
@@ -23,6 +23,7 @@ namespace PlantGrowTime
             public static ConfigEntry<int> nexusID;
             public static ManualLogSource logger;
             public static ConfigEntry<bool> modEnabled;
+            public static ConfigEntry<bool> hoverTextEnabled;
             public static ConfigEntry<bool> dropRateEnabled;
             public static ConfigEntry<bool> GrowRateEnabled;
             private static ConfigEntry<float> TurnipGrowtime;
@@ -47,11 +48,12 @@ namespace PlantGrowTime
             void Awake()
             {
                 logger = Logger;
-               
-                modEnabled = Config.Bind<bool>("General", "1Mod Enabled", true, "Enable this mod (Requires game restart to re-enable)");
-                GrowRateEnabled = Config.Bind<bool>("General", "1Grow Rate Change Enabled", true, "Enable Grow Rate Change");
-                dropRateEnabled = Config.Bind<bool>("General", "1Drop Rate Change Enabled", true, "Enable Drop Rate Change");
-                nexusID = Config.Bind<int>("General", "NexusID", 943, "Nexus mod ID for updates (DO NOT MOIDFY THIS VALUE)");
+                
+                modEnabled = Config.Bind<bool>("Mod Control", "Mod Enabled", true, "Enable this mod (Requires game restart to re-enable)");
+                GrowRateEnabled = Config.Bind<bool>("Mod Control", "Grow Rate Change Enabled", true, "Enable Grow Rate Change");
+                dropRateEnabled = Config.Bind<bool>("Mod Control", "Drop Rate Change Enabled", true, "Enable Drop Rate Change");
+                hoverTextEnabled = Config.Bind<bool>("Mod Control","Hover Text Enabled",false,"Enable Hover Text");
+                nexusID = Config.Bind<int>("Mod Control", "NexusID", 943, "Nexus mod ID for updates (DO NOT MOIDFY THIS VALUE)");
                 TurnipGrowtime = Config.Bind<float>("General", "Turnip GrowTime", 600f, "Set growtime in seconds for Turnips");
                 SeedTurnipGrowtime = Config.Bind<float>("General", "Seed TurnipGrowtime", 600f, "Set growtime in seconds for Seed Turnips");
                 CarrotGrowtime = Config.Bind<float>("General", "Carrot GrowTime", 600f, "Set growtime in seconds for Carrots");
@@ -87,7 +89,10 @@ namespace PlantGrowTime
             {
                 static void Postfix(ref Plant __instance, ref string __result)
                 {
-                    
+                    if (!hoverTextEnabled.Value)
+                        return;
+
+
                     double timeSincePlanted = Traverse.Create(__instance).Method("TimeSincePlanted").GetValue<double>();
                     float growTime = Traverse.Create(__instance).Method("GetGrowTime").GetValue<float>();
                     if (timeSincePlanted < growTime)
@@ -190,8 +195,13 @@ namespace PlantGrowTime
                     }
                     if (name == "$item_carrotseeds")
                     {
-                        __instance.m_amount = SeedTurnipDrop.Value;
+                        __instance.m_amount = SeedCarrotDrop.Value;
                         logger.LogInfo($"Set: {name} to drop: {SeedCarrotDrop.Value}");
+                    }
+                    if (name == "$item_carrot")
+                    {
+                        __instance.m_amount = CarrotDrop.Value;
+                        logger.LogInfo($"Set: {name} to drop: {CarrotDrop.Value}");
                     }
                     if (name == "$item_barley")
                     {
