@@ -1,5 +1,5 @@
 # PlantGrowTime
 
-Modify the grow time of default game plants
+Modify the grow time and drop rate of default game plants
 
 
