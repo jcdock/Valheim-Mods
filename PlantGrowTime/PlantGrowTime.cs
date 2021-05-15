@@ -23,6 +23,7 @@ namespace PlantGrowTime
             public static ConfigEntry<int> nexusID;
             public static ManualLogSource logger;
             public static ConfigEntry<bool> modEnabled;
+
             public static ConfigEntry<bool> hoverTextEnabled;
             public static ConfigEntry<bool> dropRateEnabled;
             public static ConfigEntry<bool> GrowRateEnabled;
@@ -36,6 +37,7 @@ namespace PlantGrowTime
             private static ConfigEntry<float> PineGrowTime;
             private static ConfigEntry<float> BeechGrowTime;
             private static ConfigEntry<float> OtherGrowTime;
+
             public static ConfigEntry<int> SeedTurnipDrop;
             public static ConfigEntry<int> TurnipDrop;
             public static ConfigEntry<int> SeedCarrotDrop;
@@ -48,6 +50,7 @@ namespace PlantGrowTime
             void Awake()
             {
                 logger = Logger;
+
                 
                 modEnabled = Config.Bind<bool>("Mod Control", "Mod Enabled", true, "Enable this mod (Requires game restart to re-enable)");
                 GrowRateEnabled = Config.Bind<bool>("Mod Control", "Grow Rate Change Enabled", true, "Enable Grow Rate Change");
@@ -70,6 +73,7 @@ namespace PlantGrowTime
                 CarrotDrop = Config.Bind<int>("General", "Carrot Drop", 2, "Set amount of seed each Carrot plant drops");
                 FlaxDrop = Config.Bind<int>("General", "Flax Drop", 2, "Set amount of seed each Flax plant drops");
                 BarleyDrop = Config.Bind<int>("General", "Barley Drop", 2, "Set amount of seed each Barley plant drops");
+
                 if (!modEnabled.Value)
                     return;
 
@@ -89,8 +93,10 @@ namespace PlantGrowTime
             {
                 static void Postfix(ref Plant __instance, ref string __result)
                 {
+
                     if (!hoverTextEnabled.Value)
                         return;
+
 
 
                     double timeSincePlanted = Traverse.Create(__instance).Method("TimeSincePlanted").GetValue<double>();
@@ -170,10 +176,12 @@ namespace PlantGrowTime
                         __instance.m_growTimeMax = __instance.m_growTime;
                        
 
+
                     }
                     logger.LogInfo($"Name: {__instance.m_name} Grow Time: {__instance.m_growTime}");
                 }
             }
+
 
             [HarmonyPatch(typeof(Pickable), "Awake")]
             static class Pickable_Awake_Patch
@@ -203,6 +211,7 @@ namespace PlantGrowTime
                         __instance.m_amount = CarrotDrop.Value;
                         logger.LogInfo($"Set: {name} to drop: {CarrotDrop.Value}");
                     }
+
                     if (name == "$item_barley")
                     {
                         __instance.m_amount = BarleyDrop.Value;
@@ -218,8 +227,43 @@ namespace PlantGrowTime
             }
 
 
-        }
+                    logger.LogInfo($"Name: {__instance.m_name} Grow Time: {__instance.m_growTime}");
+                }
+            }
 
-    }
+            [HarmonyPatch(typeof(Pickable), "Awake")]
+            static class Pickable_Awake_Patch
+            {
+                static void Postfix(ref Pickable __instance)
+                {
+                    
+                    string name = __instance.GetHoverName();
+                    if (name == "$item_turnipseeds")
+                    {
+                        __instance.m_amount = SeedTurnipDrop.Value;
+                        logger.LogInfo($"Set: {name} to drop: {SeedTurnipDrop.Value}");
+                    }
+                    if (name == "$item_turnip")
+                    {
+                        __instance.m_amount = TurnipDrop.Value;
+                        logger.LogInfo($"Set: {name} to drop: {TurnipDrop.Value}");
+                    }
+                    if (name == "$item_carrotseeds")
+                    {
+                        __instance.m_amount = SeedTurnipDrop.Value;
+                        logger.LogInfo($"Set: {name} to drop: {SeedCarrotDrop.Value}");
+                    }
+                    if (name == "$item_barley")
+                    {
+                        __instance.m_amount = BarleyDrop.Value;
+                        logger.LogInfo($"Set: {name} to drop: {BarleyDrop.Value}");
+                    }
+                    if (name == "$item_flax")
+                    {
+                        __instance.m_amount = FlaxDrop.Value;
+                        logger.LogInfo($"Set: {name} to drop: {FlaxDrop.Value}");
+                    }
 
-}
+                }
+            }
+
